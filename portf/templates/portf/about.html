@@ -1,0 +1,71 @@
+{% extends 'portf/layout/main.html' %}
+{% load static %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>about</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-image: url('{% static "images/bg1.PNG" %}');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        .content {
+            text-align: center;
+            padding: 50px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    {% for pers in personal %}
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-6 text-center">
+            <img src="{{ pers.image.url }}" alt="d" class="img-fluid rounded-circle" width="250" height="250">
+            <h1 class="mt-4"><b>{{ pers.first_name }} {{ pers.middle_initial }} {{ pers.last_name }}</b></h1>
+            <h4>About me</h4>
+            <div class="text-center px-4">
+                <p>{{ pers.desc }}</p>
+            </div>
+            <h4 class="mt-4">Contact</h4>
+            <div class="text-center px-4">
+                <h5>Address</h5>
+                <p>{{ pers.address }}</p>
+                <h5>Phone</h5>
+                <p>{{ pers.description }}</p>
+            </div>
+            <h5 class="mt-4">Education</h5>
+            <div class="text-center px-4">
+                <h5>Under Graduate</h5>
+                <p>{{ pers.col_year }}</p>
+                <p>{{ pers.col_sch }}</p>
+                <h5>High School</h5>
+                <h5>Senior High School</h5>
+                <div><p>{{ pers.shs_year }}</p></div>
+                <div><p>{{ pers.shs_sch }}</p></div>
+                <h5>Junior High School</h5>
+                <div><p>{{ pers.jhs_year }}</p></div>
+                <div><p>{{ pers.jhs_sch }}</p></div>
+            </div>
+            <div class="mt-4">
+                <a href="{{ pers.facebook_url }}"><img src="{% static 'images/fb.png'%}" alt="fb" width="25" height="24"></a>
+                <a href="{{ pers.insta_url }}"><img src="{% static 'images/insta.png'%}" alt="insta" width="25" height="24"></a>
+                <a href="mailto:{{ pers.email_add }}"><img src="{% static 'images/mail.png'%}" alt="mail" width="25" height="24"></a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+{% endblock %}

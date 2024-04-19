@@ -1,0 +1,124 @@
+{% extends 'portf/layout/main.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {% load static %}
+        <link rel="stylesheet" href="{%static 'what.css'%}"/>
+        <title>works</title>
+        <style>
+          html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+            body {
+                background-image: url('static/images/bg.JPG');
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+            }
+            .content {
+              text-align: center;
+              padding: 50px;
+            }
+            .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 10px;
+             }
+            .gallery {
+            margin-left: 700; 
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            width: calc(100% - 10px); 
+        }
+
+
+            .image {
+                margin: 10px;
+                text-align: center; 
+            }
+
+            .image img {
+                max-width: 50%;
+                height: auto;
+            }
+
+            .image p {
+                margin-top: 5px;
+            }
+            
+
+            #doh img {
+                max-width: 300px; /* Adjust the maximum width as needed */
+                height: auto;
+                margin: 10px; /* Add some margin between the images */
+                transition: transform 0.3s ease;
+            }
+
+            /* Hover effect on Doh images */
+            #doh img:hover {
+                transform: scale(1.1);
+            }
+            .description {
+            margin-left: 20px; /* Add some space between image and description */
+            }
+
+            /* Adjust the description text style as needed */
+            . p {
+                font-size: 78px;
+                margin-bottom: 5px;
+            }
+</style>
+    </head>
+<body>
+    <h1> </h1>
+    <div id="art">
+        <div class="container">
+            <h1 class="sub-tittle">Art</h1>
+            {% include 'portf/inc/slider.html' %}
+        </div>
+
+<div id="works">
+    <div class="container">
+        <h1 class="sub-tittle">Website</h1>
+        <h2 class="sub-tittle">AMAbay e-commerce</h2>
+        <h5 class="sub-tittle">click to see the demo</h5>
+    </div>
+
+    <section class="gallery" style="margin-left: -190px;">
+        {% for web in website %}
+        <div class="image">
+            <a href="https://youtu.be/ZrN2kAo_dlM">
+                <img src="{{ web.image.url }}" alt="" height="500">
+            </a>
+            <p> {{ web.title }}</p>
+        </div>
+        {% endfor %}
+    </section>
+    
+    <div style="position: absolute; top: 10x; right: 350px;">
+        <h3 style="font-weight: bold;">{{ web.descr }}</h3>
+    </div>
+    
+    <div id="doh">
+        <div class="container">
+            <h1 class="sub-tittle">Layout</h1>
+            <h2 class="sub-tittle">DOH bidding schedule</h2>
+            {% for doh in dohp %}
+                <img src="{{ doh.image.url }}" alt="Doh Image">
+            {% endfor %}
+        </div>
+    </div>
+    
+
+     
+</body>
+</html>
+{% endblock %} 
