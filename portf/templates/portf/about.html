@@ -29,19 +29,16 @@
     <div class="row justify-content-center mt-5">
         <div class="col-md-6 text-center">
             <img src="{{ pers.image.url }}" alt="d" class="img-fluid rounded-circle" width="250" height="250">
-            <h1 class="mt-4"><b>{{ pers.first_name }} {{ pers.middle_initial }} {{ pers.last_name }}</b></h1>
+            <h1 class="mt-4"><b>{{ pers.first_name }} {{ pers.middle_initial }}. {{ pers.last_name }}</b></h1>
             <h4>About me</h4>
             <div class="text-center px-4">
                 <p>{{ pers.desc }}</p>
             </div>
-            <h4 class="mt-4">Contact</h4>
             <div class="text-center px-4">
                 <h5>Address</h5>
                 <p>{{ pers.address }}</p>
-                <h5>Phone</h5>
-                <p>{{ pers.description }}</p>
             </div>
-            <h5 class="mt-4">Education</h5>
+            <h4 class="mt-4">Education</h4>
             <div class="text-center px-4">
                 <h5>Under Graduate</h5>
                 <p>{{ pers.col_year }}</p>
@@ -54,6 +51,10 @@
                 <div><p>{{ pers.jhs_year }}</p></div>
                 <div><p>{{ pers.jhs_sch }}</p></div>
             </div>
+            <h4 class="mt-4">Contact</h4>
+            <h5>Phone</h5>
+            <p>{{ pers.description }}</p>
+            <h5>Socials</h5>
             <div class="mt-4">
                 <a href="{{ pers.facebook_url }}"><img src="{% static 'images/fb.png'%}" alt="fb" width="25" height="24"></a>
                 <a href="{{ pers.insta_url }}"><img src="{% static 'images/insta.png'%}" alt="insta" width="25" height="24"></a>

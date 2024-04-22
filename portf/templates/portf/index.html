@@ -14,28 +14,34 @@
         height: 100%;
         margin: 0;
         padding: 0;
+      }
+      body {
+        background-image: url('static/images/bg.PNG');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
     }
-        body {
-            background-image: url('static/images/bg.PNG');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-        }
+    .home-content {
+        position: relative;
+    }
+    .element {
+        position: relative;
+    }
     </style>
 </head>
 <body>
   <section class="home" id="home">
     <div class="home-content">
-      <h3>Hello, my name</h3>
-      <h1>Aniver Yap</h1>
-      <h3>and im a <span class="element"></span></h3>                      
+        <h3>Hello, my name</h3>
+        <h1>Aniver Yap</h1>
+        <h3>and im a <span class="element"></span></h3>
     </div>
-  </section>
+</section>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
   <script>
-    var typed = new Typed('.element', {
-        strings: ['pogi.', 'graphics designer.', 'frontend developer.'],
+var typed = new Typed('.element', {
+        strings: ['pogi.', 'graphics designer.', 'technician.', 'frontend developer.'],
         typeSpeed: 20,
         loop: true
     });

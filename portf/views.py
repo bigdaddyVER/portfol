@@ -23,19 +23,18 @@ def works(request):
 def what(request):
     website = Website.objects.all()
     dohp = Doh.objects.all()
+    arts = Art.objects.all()
     context = {
         'website':website,
         'dohp':dohp,
+        'arts':arts
      }
     return render(request, "portf/what.html", context)
 
 def whatt(request):
     return render(request, 'index.html')
 
-def art(request):
-    artworks = Art.objects.all() 
-    context = {    
-        'artworks':artworks,
-     }
-    return render(request, "portf/inc/slider.html", {'artworks': context})
- 
+from django.shortcuts import render
+from .models import Art
+
+

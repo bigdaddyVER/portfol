@@ -1,6 +1,6 @@
 #home {
-    position: absolute;
-    top: 350px; 
+    position: relative;
+    top: 250px; 
     left: 70%; 
     transform: translateX(-50%);
 }
